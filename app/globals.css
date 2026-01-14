@@ -127,15 +127,21 @@
 
 @layer utilities {
   .glass {
-    @apply bg-white/5 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_0_rgba(0, 0, 0, 0.37)];
+    background-color: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
   }
 
   .glass-dark {
-    @apply bg-black/40 backdrop-blur-2xl border border-white/5 shadow-2xl;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(40px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
   }
 
   .glow-primary {
-    @apply shadow-[0_0_20px_rgba(var(--primary), 0.3)];
+    box-shadow: 0 0 20px color-mix(in srgb, var(--primary), transparent 70%);
   }
 
   .text-glow {
