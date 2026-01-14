@@ -29,6 +29,8 @@ export type TeamMinAggregateOutputType = {
   teamId: string | null
   teamLeaderEmail: string | null
   teamLeaderPhone: string | null
+  nftMinted: boolean | null
+  walletAddress: string | null
   createdAt: Date | null
   updatedAt: Date | null
 }
@@ -38,6 +40,8 @@ export type TeamMaxAggregateOutputType = {
   teamId: string | null
   teamLeaderEmail: string | null
   teamLeaderPhone: string | null
+  nftMinted: boolean | null
+  walletAddress: string | null
   createdAt: Date | null
   updatedAt: Date | null
 }
@@ -47,6 +51,8 @@ export type TeamCountAggregateOutputType = {
   teamId: number
   teamLeaderEmail: number
   teamLeaderPhone: number
+  nftMinted: number
+  walletAddress: number
   createdAt: number
   updatedAt: number
   _all: number
@@ -58,6 +64,8 @@ export type TeamMinAggregateInputType = {
   teamId?: true
   teamLeaderEmail?: true
   teamLeaderPhone?: true
+  nftMinted?: true
+  walletAddress?: true
   createdAt?: true
   updatedAt?: true
 }
@@ -67,6 +75,8 @@ export type TeamMaxAggregateInputType = {
   teamId?: true
   teamLeaderEmail?: true
   teamLeaderPhone?: true
+  nftMinted?: true
+  walletAddress?: true
   createdAt?: true
   updatedAt?: true
 }
@@ -76,6 +86,8 @@ export type TeamCountAggregateInputType = {
   teamId?: true
   teamLeaderEmail?: true
   teamLeaderPhone?: true
+  nftMinted?: true
+  walletAddress?: true
   createdAt?: true
   updatedAt?: true
   _all?: true
@@ -158,6 +170,8 @@ export type TeamGroupByOutputType = {
   teamId: string
   teamLeaderEmail: string
   teamLeaderPhone: string | null
+  nftMinted: boolean
+  walletAddress: string | null
   createdAt: Date
   updatedAt: Date
   _count: TeamCountAggregateOutputType | null
@@ -188,6 +202,8 @@ export type TeamWhereInput = {
   teamId?: Prisma.StringFilter<"Team"> | string
   teamLeaderEmail?: Prisma.StringFilter<"Team"> | string
   teamLeaderPhone?: Prisma.StringNullableFilter<"Team"> | string | null
+  nftMinted?: Prisma.BoolFilter<"Team"> | boolean
+  walletAddress?: Prisma.StringNullableFilter<"Team"> | string | null
   createdAt?: Prisma.DateTimeFilter<"Team"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Team"> | Date | string
 }
@@ -197,6 +213,8 @@ export type TeamOrderByWithRelationInput = {
   teamId?: Prisma.SortOrder
   teamLeaderEmail?: Prisma.SortOrder
   teamLeaderPhone?: Prisma.SortOrderInput | Prisma.SortOrder
+  nftMinted?: Prisma.SortOrder
+  walletAddress?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
 }
@@ -209,6 +227,8 @@ export type TeamWhereUniqueInput = Prisma.AtLeast<{
   NOT?: Prisma.TeamWhereInput | Prisma.TeamWhereInput[]
   teamLeaderEmail?: Prisma.StringFilter<"Team"> | string
   teamLeaderPhone?: Prisma.StringNullableFilter<"Team"> | string | null
+  nftMinted?: Prisma.BoolFilter<"Team"> | boolean
+  walletAddress?: Prisma.StringNullableFilter<"Team"> | string | null
   createdAt?: Prisma.DateTimeFilter<"Team"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Team"> | Date | string
 }, "id" | "teamId">
@@ -218,6 +238,8 @@ export type TeamOrderByWithAggregationInput = {
   teamId?: Prisma.SortOrder
   teamLeaderEmail?: Prisma.SortOrder
   teamLeaderPhone?: Prisma.SortOrderInput | Prisma.SortOrder
+  nftMinted?: Prisma.SortOrder
+  walletAddress?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
   _count?: Prisma.TeamCountOrderByAggregateInput
@@ -233,6 +255,8 @@ export type TeamScalarWhereWithAggregatesInput = {
   teamId?: Prisma.StringWithAggregatesFilter<"Team"> | string
   teamLeaderEmail?: Prisma.StringWithAggregatesFilter<"Team"> | string
   teamLeaderPhone?: Prisma.StringNullableWithAggregatesFilter<"Team"> | string | null
+  nftMinted?: Prisma.BoolWithAggregatesFilter<"Team"> | boolean
+  walletAddress?: Prisma.StringNullableWithAggregatesFilter<"Team"> | string | null
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"Team"> | Date | string
   updatedAt?: Prisma.DateTimeWithAggregatesFilter<"Team"> | Date | string
 }
@@ -242,6 +266,8 @@ export type TeamCreateInput = {
   teamId: string
   teamLeaderEmail: string
   teamLeaderPhone?: string | null
+  nftMinted?: boolean
+  walletAddress?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
 }
@@ -251,6 +277,8 @@ export type TeamUncheckedCreateInput = {
   teamId: string
   teamLeaderEmail: string
   teamLeaderPhone?: string | null
+  nftMinted?: boolean
+  walletAddress?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
 }
@@ -260,6 +288,8 @@ export type TeamUpdateInput = {
   teamId?: Prisma.StringFieldUpdateOperationsInput | string
   teamLeaderEmail?: Prisma.StringFieldUpdateOperationsInput | string
   teamLeaderPhone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  nftMinted?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  walletAddress?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -269,6 +299,8 @@ export type TeamUncheckedUpdateInput = {
   teamId?: Prisma.StringFieldUpdateOperationsInput | string
   teamLeaderEmail?: Prisma.StringFieldUpdateOperationsInput | string
   teamLeaderPhone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  nftMinted?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  walletAddress?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -278,6 +310,8 @@ export type TeamCreateManyInput = {
   teamId: string
   teamLeaderEmail: string
   teamLeaderPhone?: string | null
+  nftMinted?: boolean
+  walletAddress?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
 }
@@ -287,6 +321,8 @@ export type TeamUpdateManyMutationInput = {
   teamId?: Prisma.StringFieldUpdateOperationsInput | string
   teamLeaderEmail?: Prisma.StringFieldUpdateOperationsInput | string
   teamLeaderPhone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  nftMinted?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  walletAddress?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -296,6 +332,8 @@ export type TeamUncheckedUpdateManyInput = {
   teamId?: Prisma.StringFieldUpdateOperationsInput | string
   teamLeaderEmail?: Prisma.StringFieldUpdateOperationsInput | string
   teamLeaderPhone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  nftMinted?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  walletAddress?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -305,6 +343,8 @@ export type TeamCountOrderByAggregateInput = {
   teamId?: Prisma.SortOrder
   teamLeaderEmail?: Prisma.SortOrder
   teamLeaderPhone?: Prisma.SortOrder
+  nftMinted?: Prisma.SortOrder
+  walletAddress?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
 }
@@ -314,6 +354,8 @@ export type TeamMaxOrderByAggregateInput = {
   teamId?: Prisma.SortOrder
   teamLeaderEmail?: Prisma.SortOrder
   teamLeaderPhone?: Prisma.SortOrder
+  nftMinted?: Prisma.SortOrder
+  walletAddress?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
 }
@@ -323,6 +365,8 @@ export type TeamMinOrderByAggregateInput = {
   teamId?: Prisma.SortOrder
   teamLeaderEmail?: Prisma.SortOrder
   teamLeaderPhone?: Prisma.SortOrder
+  nftMinted?: Prisma.SortOrder
+  walletAddress?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
 }
@@ -334,6 +378,8 @@ export type TeamSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = r
   teamId?: boolean
   teamLeaderEmail?: boolean
   teamLeaderPhone?: boolean
+  nftMinted?: boolean
+  walletAddress?: boolean
   createdAt?: boolean
   updatedAt?: boolean
 }, ExtArgs["result"]["team"]>
@@ -343,6 +389,8 @@ export type TeamSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensio
   teamId?: boolean
   teamLeaderEmail?: boolean
   teamLeaderPhone?: boolean
+  nftMinted?: boolean
+  walletAddress?: boolean
   createdAt?: boolean
   updatedAt?: boolean
 }, ExtArgs["result"]["team"]>
@@ -352,6 +400,8 @@ export type TeamSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensio
   teamId?: boolean
   teamLeaderEmail?: boolean
   teamLeaderPhone?: boolean
+  nftMinted?: boolean
+  walletAddress?: boolean
   createdAt?: boolean
   updatedAt?: boolean
 }, ExtArgs["result"]["team"]>
@@ -361,11 +411,13 @@ export type TeamSelectScalar = {
   teamId?: boolean
   teamLeaderEmail?: boolean
   teamLeaderPhone?: boolean
+  nftMinted?: boolean
+  walletAddress?: boolean
   createdAt?: boolean
   updatedAt?: boolean
 }
 
-export type TeamOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "teamId" | "teamLeaderEmail" | "teamLeaderPhone" | "createdAt" | "updatedAt", ExtArgs["result"]["team"]>
+export type TeamOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "teamId" | "teamLeaderEmail" | "teamLeaderPhone" | "nftMinted" | "walletAddress" | "createdAt" | "updatedAt", ExtArgs["result"]["team"]>
 
 export type $TeamPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "Team"
@@ -375,6 +427,8 @@ export type $TeamPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs =
     teamId: string
     teamLeaderEmail: string
     teamLeaderPhone: string | null
+    nftMinted: boolean
+    walletAddress: string | null
     createdAt: Date
     updatedAt: Date
   }, ExtArgs["result"]["team"]>
@@ -804,6 +858,8 @@ export interface TeamFieldRefs {
   readonly teamId: Prisma.FieldRef<"Team", 'String'>
   readonly teamLeaderEmail: Prisma.FieldRef<"Team", 'String'>
   readonly teamLeaderPhone: Prisma.FieldRef<"Team", 'String'>
+  readonly nftMinted: Prisma.FieldRef<"Team", 'Boolean'>
+  readonly walletAddress: Prisma.FieldRef<"Team", 'String'>
   readonly createdAt: Prisma.FieldRef<"Team", 'DateTime'>
   readonly updatedAt: Prisma.FieldRef<"Team", 'DateTime'>
 }
