@@ -182,10 +182,7 @@ export default function AirdropPage() {
     );
 
   return (
-    <div className="min-h-screen text-white selection:bg-primary/30 pt-16 pb-12 px-4 relative overflow-hidden font-sans bg-black">
-      {/* Background Effects */}
-      <div className="fixed inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-neutral-900 via-black to-black -z-10" />
-
+    <div className="min-h-screen text-white selection:bg-primary/30 pt-16 pb-12 px-4 relative overflow-hidden font-sans">
       <div className="max-w-xl mx-auto relative z-10 space-y-8">
         {/* Header */}
         <div className="flex justify-between items-center bg-white/5 backdrop-blur-xl p-4 rounded-3xl border border-white/10 shadow-2xl">
@@ -385,7 +382,7 @@ export default function AirdropPage() {
                         className="h-16 text-lg bg-neutral-950/80 border-white/10 text-white rounded-2xl"
                         value={formData.phone}
                         onChange={(e) =>
-                          setFormData({ ...formData, phone: e.target.value })
+                          setFormData({ ...formData, phone: e.target.value.replace(/[^0-9+]/g, "") })
                         }
                       />
                     </div>
@@ -476,7 +473,7 @@ export default function AirdropPage() {
                     required
                     className="text-center text-5xl h-24 tracking-[0.4em] font-black bg-neutral-950/90 border-white/10 focus:border-primary/50 rounded-3xl shadow-2xl transition-all"
                     value={otp}
-                    onChange={(e) => setOtp(e.target.value.replace(/\D/g, ""))}
+                    onChange={(e) => setOtp(e.target.value.replace(/[^0-9]/g, ""))}
                   />
                 </div>
                 <Button
